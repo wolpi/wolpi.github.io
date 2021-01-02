@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello wasm-pack!</title>
+
+    <style>
+      body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #fps {
+        white-space: pre;
+        font-family: monospace;
+      }
+      .controls {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      label {
+        margin-left: 5px;
+        line-height: 35px;
+      }
+      input {
+        width: 50px;
+      }
+      #reset {
+        margin-left: 5px;
+      }
+      #step {
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button id="play-pause"></button>
+      <label for="width">width: </label><input type="number" value="" id="width">
+      <label for="height">height: </label><input type="number" value="" id="height">
+      <label for="factor">factor: </label><input type="number" value="" step="any" id="factor">
+      <button id="reset">reset</button>
+      <button id="step">step</button>
+    </div>
+    <canvas id="game-of-life-canvas"></canvas>
+    <div id="fps"></div>
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
