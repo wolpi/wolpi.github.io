@@ -30,12 +30,34 @@
       }
       #score-block {
         margin-top: 20px;
+        margin-bottom: 5px;
+        padding: 2px;
+        border: 1px solid black;
+        background-color: white;
       }
       canvas {
         border: 3px solid black;
       }
       #controls-info {
         margin-bottom: 40px;
+      }
+      .touch-line-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .touch-control {
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 50px;
+        cursor: pointer;
+      }
+      #touch-pause {
+        border: 2px solid black;
       }
     </style>
   <script defer src="index.js"></script></head>
@@ -45,7 +67,7 @@
       Height: <input type="number" id="height" value="480">
       Block Size: <input type="number" id="block-size" value="15">
       <label for="grid">Grid:</label> <input type="checkbox" id="grid">
-      <span id="create" class="dummy-button">Create !</span><!-- don't use button element to avoid issues with focus -->
+      <span id="create" class="dummy-button">Play !</span><!-- don't use button element to avoid issues with focus -->
     </div>
     <div id="score-block">
       <span>Score: </span><span id="score">0</span>,
@@ -53,5 +75,18 @@
     </div>
     <canvas id="canvas"></canvas>
     <div id="controls-info">Use a,s,d,w to control snake, space to pause</div>
+    <div id="touch-controls">
+      <div class="touch-line-container">
+        <div class="touch-control" id="touch-up">⬆️</div>
+      </div>
+      <div class="touch-line-container">
+        <div class="touch-control" id="touch-left">⬅️</div>
+        <div class="touch-control" id="touch-pause"> </div>
+        <div class="touch-control" id="touch-right">➡️</div>
+      </div>
+      <div class="touch-line-container">
+        <div class="touch-control" id="touch-down">⬇️</div>
+      </div>
+    </div>
   </body>
 </html>
