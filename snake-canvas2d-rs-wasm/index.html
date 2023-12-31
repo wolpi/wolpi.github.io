@@ -93,12 +93,17 @@
       <label for="block-size">Block&nbsp;Size:</label>&nbsp;<input type="number" id="block-size" value="15">
       <label for="grid">Grid:</label>&nbsp;<input type="checkbox" id="grid">
       <label for="touch-mode">Touch&nbsp;Mode:</label>&nbsp;<input type="checkbox" id="touch-mode">
+      <label for="game-mode">Game&nbsp;Mode:</label>&nbsp;<select id="game-mode">
+        <option value="Fast">Fast Snake</option>
+        <option value="Long">Long Snake</option>
+      </select>
       <label for="name">Highscore&nbsp;Name:</label>&nbsp;<input type="text" id="name" value="Player">
       <span id="create" class="dummy-button">Play !</span><!-- don't use button element to avoid issues with focus -->
     </div>
     <div id="score-block">
       <span>Score: </span><span id="score">0</span>,
       <span>Speed: </span><span id="current-speed">1</span>
+      <span>Duration: </span><span id="duration">0</span>
     </div>
     <canvas id="canvas"></canvas>
     <div id="controls-info">Use a,s,d,w to control snake, space to pause</div>
@@ -118,7 +123,9 @@
           <th>Rank</th>
           <th>Name</th>
           <th>Score</th>
-          <th>Mode</th>
+          <th>Duration</th>
+          <th>Game Mode</th>
+          <th>Input Mode</th>
           <th>Time</th>
         </tr>
       </table>
